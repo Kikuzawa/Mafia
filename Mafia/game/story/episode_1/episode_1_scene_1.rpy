@@ -1,7 +1,8 @@
 ﻿label episode_1_scene_1:
+    "Несколько лет спустя..."
     play music "music_01.mp3"
     # Установка начального фона
-    scene bg house_dar_outside
+    scene bg house_dar_outside with dissolve
     "В домике рядом с домом Дарио"
     
     # Переход внутрь домика с эффектом
