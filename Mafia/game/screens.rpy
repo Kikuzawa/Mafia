@@ -32,6 +32,11 @@ style button_text is gui_text:
     properties gui.text_properties("button")
     yalign 0.5
 
+style purple_outline_text:
+    color "#9933ff"  # Фиолетовый цвет текста
+    outlines [(2, "#000000", 0, 0)]  # Обводка: толщина 2 пикселя, черный цвет
+    font "DejaVuSans.ttf"  # Шрифт
+    size 33  # Размер текста
 
 style label_text is gui_text:
     properties gui.text_properties("label", accent=True)
@@ -284,6 +289,15 @@ style quick_button_text:
 ## Этот экран включает в себя главное и игровое меню, и обеспечивает навигацию к
 ## другим меню и к началу игры.
 
+# Определяем анимацию для пульсирующего фона
+transform pulsate:
+    # Плавное уменьшение прозрачности и масштабирование (углубление)
+    easein 5 alpha 0.5 zoom 1.2
+    # Плавное увеличение прозрачности и масштабирование (отдаление)
+    easeout 5 alpha 1.0 zoom 1.0
+    repeat  # Повторяем анимацию бесконечно
+
+
 screen navigation():
 
     vbox:
@@ -353,7 +367,8 @@ screen main_menu():
     ## заменять этот.
     tag menu
 
-    add gui.main_menu_background
+    add gui.main_menu_background at pulsate
+    
 
     ## Эта пустая рамка затеняет главное меню.
     frame:

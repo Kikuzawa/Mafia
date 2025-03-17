@@ -10,7 +10,6 @@ init offset = -2
 ## значениям, и задать высоту и ширину окна игры.
 init python:
     gui.init(1920, 1080)
-
 ## Включить проверку на недопустимые или нестабильные свойства в экранах или
 ## преобразованиях
 define config.check_conflicting_properties = True
@@ -83,14 +82,14 @@ define gui.label_text_size = 36
 define gui.notify_text_size = 24
 
 ## Размер заголовка игры.
-define gui.title_text_size = 75
+define gui.title_text_size = 150
 
 
 ## Главное и игровое меню. #####################################################
 
 ## Изображения, используемые в главном и игровом меню.
-define gui.main_menu_background = "gui/main_menu.png"
-define gui.game_menu_background = "gui/game_menu.png"
+define gui.main_menu_background = im.Scale("gui/main_menu.png", 1920, 1080)
+define gui.game_menu_background = im.Scale("gui/game_menu.png", 1920, 1080)
 
 
 ## Диалог ######################################################################
